@@ -42,11 +42,25 @@
   font-weight: 300;
 }
 
+.profil__time {
+  margin: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 0.9rem;
+  color: #bdc1ff;
+}
+
 .card {
   background-color: #1c1f4a;
   margin-bottom: 1rem;
   border-radius: 10px;
-  height: 10rem;
+}
+
+.card:not(:first-child) {
+  height: 15rem;
 }
 
 body {

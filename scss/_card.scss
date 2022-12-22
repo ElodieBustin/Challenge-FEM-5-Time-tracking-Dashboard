@@ -1,6 +1,8 @@
 .card {
+    &:not(:first-child){
+        height: 15rem;
+    }
     background-color: $darkBlue;
     margin-bottom: 1rem;
-    border-radius: 10px;
-    height: 10rem;
+    border-radius: 10px; 
 }
