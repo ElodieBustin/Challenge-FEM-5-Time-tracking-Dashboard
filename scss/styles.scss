@@ -1,0 +1,11 @@
+@import 'variables';
+
+body{
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    max-width: 375px;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
