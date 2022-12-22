@@ -63,6 +63,22 @@
   height: 15rem;
 }
 
+.card .banner {
+  height: 2.5rem;
+}
+
+.card .tracker {
+  background-color: #1c1f4a;
+  border-radius: 10px;
+}
+
+.work {
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+  background-color: #ff8c66;
+  background-image: url("/images/icon-work.svg");
+}
+
 body {
   font-size: 18px;
   font-family: 'Rubik', sans-serif;
@@ -79,5 +95,9 @@ body {
   padding: 1rem;
   color: white;
   background-color: #0f1424;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -5,4 +5,26 @@
     background-color: $darkBlue;
     margin-bottom: 1rem;
     border-radius: 10px; 
+
+    .banner{
+        height: 2.5rem;
+
+
+
+    }
+
+    .tracker{
+        background-color: $darkBlue;
+        border-radius: 10px;
+    }
+}
+
+.work{
+    background-repeat: no-repeat;
+    background-position: top -0.6rem right 1rem;
+    // Trouver le bon code pour réutiliser
+    // background-repeat et position sans les répéter
+    background-color: $lightRedWork;
+    background-image: url('/images/icon-work.svg');
+
 }
