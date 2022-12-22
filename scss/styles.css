@@ -1,3 +1,54 @@
+.profil__header {
+  background-color: #5847eb;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1.5rem;
+}
+
+.profil__header .image-container {
+  width: 80px;
+}
+
+.profil__header .image-container img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.profil__report {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.8rem;
+  color: #bdc1ff;
+  margin-left: 1rem;
+}
+
+.profil__report > span {
+  margin-top: 0.5rem;
+  color: white;
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.card {
+  background-color: #1c1f4a;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  height: 10rem;
+}
+
 body {
   font-size: 18px;
   font-family: 'Rubik', sans-serif;
@@ -11,5 +62,8 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 1rem;
+  color: white;
+  background-color: #0f1424;
 }
 /*# sourceMappingURL=styles.css.map */

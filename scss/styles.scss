@@ -1,4 +1,6 @@
 @import 'variables';
+@import 'profil';
+@import 'card';
 
 body{
     font-size: 18px;
@@ -8,4 +10,7 @@ body{
     margin: auto;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    color: white;
+    background-color: $veryDarkBlue;
 }
