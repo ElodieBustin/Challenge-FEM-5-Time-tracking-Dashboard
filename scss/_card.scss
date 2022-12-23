@@ -1,6 +1,6 @@
 .card {
     &:not(:first-child){
-        height: 15rem;
+        height: 150px;
     }
     background-color: $darkBlue;
     margin-bottom: 1rem;
@@ -9,13 +9,12 @@
     .banner{
         height: 2.5rem;
 
-
-
     }
 
     .tracker{
         background-color: $darkBlue;
         border-radius: 10px;
+        height: calc(100% - 2.5rem);
     }
 }
 
@@ -24,7 +23,42 @@
     background-position: top -0.6rem right 1rem;
     // Trouver le bon code pour réutiliser
     // background-repeat et position sans les répéter
+    // Autre classe ?
     background-color: $lightRedWork;
     background-image: url('/images/icon-work.svg');
+}
 
+.play{
+    background-repeat: no-repeat;
+    background-position: top -0.6rem right 1rem;
+    background-color: $softBlue;
+    background-image: url('/images/icon-play.svg');
+}
+
+.study{
+    background-repeat: no-repeat;
+    background-position: top -0.6rem right 1rem;
+    background-color: $lightRed;
+    background-image: url('/images/icon-study.svg');
+}
+
+.exercise{
+    background-repeat: no-repeat;
+    background-position: top -0.6rem right 1rem;
+    background-color: $limeGreen;
+    background-image: url('/images/icon-exercise.svg');
+}
+
+.social{
+    background-repeat: no-repeat;
+    background-position: top -0.6rem right 1rem;
+    background-color: $violet;
+    background-image: url('/images/icon-social.svg');
+}
+
+.self-care{
+    background-repeat: no-repeat;
+    background-position: top -0.6rem right 1rem;
+    background-color: $softOrange;
+    background-image: url('/images/icon-self-care.svg');
 }

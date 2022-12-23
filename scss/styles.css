@@ -60,7 +60,7 @@
 }
 
 .card:not(:first-child) {
-  height: 15rem;
+  height: 150px;
 }
 
 .card .banner {
@@ -70,6 +70,7 @@
 .card .tracker {
   background-color: #1c1f4a;
   border-radius: 10px;
+  height: calc(100% - 2.5rem);
 }
 
 .work {
@@ -77,6 +78,41 @@
   background-position: top -0.6rem right 1rem;
   background-color: #ff8c66;
   background-image: url("/images/icon-work.svg");
+}
+
+.play {
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+  background-color: #56c2e6;
+  background-image: url("/images/icon-play.svg");
+}
+
+.study {
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+  background-color: #ff5c7c;
+  background-image: url("/images/icon-study.svg");
+}
+
+.exercise {
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+  background-color: #4acf81;
+  background-image: url("/images/icon-exercise.svg");
+}
+
+.social {
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+  background-color: #7536d3;
+  background-image: url("/images/icon-social.svg");
+}
+
+.self-care {
+  background-repeat: no-repeat;
+  background-position: top -0.6rem right 1rem;
+  background-color: #f1c65b;
+  background-image: url("/images/icon-self-care.svg");
 }
 
 body {
