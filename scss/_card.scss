@@ -15,6 +15,36 @@
         background-color: $darkBlue;
         border-radius: 10px;
         height: calc(100% - 2.5rem);
+        padding: 0 1.8rem;
+
+        //grid
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 0.8rem 0;
+
+        .align-end{
+            align-self: end;
+        }
+
+        .justify-end{
+            justify-self: end;
+        }
+
+        .activity{
+            font-weight: 500;
+        }
+
+        .current{
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+
+        .previous{
+            font-size: 0.9rem;
+            color: $desaturatedBlue;
+            padding-top: 0.5rem;
+        }
     }
 }
 
