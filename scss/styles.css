@@ -174,4 +174,8 @@ body {
 .hidden {
   display: none;
 }
+
+.active {
+  color: white;
+}
 /*# sourceMappingURL=styles.css.map */
