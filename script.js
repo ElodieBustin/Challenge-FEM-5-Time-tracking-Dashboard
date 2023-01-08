@@ -1,33 +1,37 @@
-// let currentHourSuffix = currentTime === 1 ? "hr" : "hrs";
-// let previousHourSuffix = previousTime === 1 ? "hr" : "hrs";
+//Mettre les données daily en dur et ajouter selected
+//Une seule fonction dans le fetch
+//Ensuite, selon le dataset choisi, on adapte current et previous ?
+
+const daily = document.querySelector('[data-time=\'daily\']');
+const weekly = document.querySelector('[data-time=\'weekly\']');
+const monthly = document.querySelector('[data-time=\'monthly\']');
+
+console.log(daily.dataset.time);
 
 
-
-
-function currentTime(data){
+function dailyTime(data){
   const currentSpan = document.getElementsByClassName('current');
+  const previousSpan = document.getElementsByClassName('previous');
+
   for(let i = 0; i <data.length; i++){
-    currentSpan[i].innerHTML = `${data[i].timeframes.daily.current} hrs`;
+    let currentDataI = data[i].timeframes.daily.current;
+    let previousDataI = data[i].timeframes.daily.previous;
+    let currentHourSuffix = currentDataI <= 1 ? 'hr' : 'hrs';
+    let previousHourSuffix = previousDataI <= 1 ? 'hr' : 'hrs';
+    currentSpan[i].innerHTML = `${currentDataI} ${currentHourSuffix}`;
+    previousSpan[i].innerHTML = `Previous - ${previousDataI} ${previousHourSuffix}`;
   }
 }
 
-function previousTime(data){
-  const previousSpan = document.getElementsByClassName('previous');
-  for(let i = 0; i <data.length; i++){
-    previousSpan[i].innerHTML = `Previous - ${data[i].timeframes.daily.previous} hrs`;
-  }
-}
 
 //fetching data
-
 fetch('data.json')
   .then(function(response){
     return response.json();
   })
   .then(function (data){
     console.log(data);
-    currentTime(data);
-    previousTime(data);
+    dailyTime(data);
 
   })
   .catch(function(err){

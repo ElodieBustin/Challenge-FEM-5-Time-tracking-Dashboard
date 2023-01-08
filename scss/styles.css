@@ -53,6 +53,10 @@
   color: #bdc1ff;
 }
 
+.profil__time .time-choice:hover {
+  cursor: pointer;
+}
+
 .card {
   background-color: #1c1f4a;
   margin-bottom: 1rem;
