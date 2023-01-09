@@ -3,7 +3,6 @@ const timeChoices = document.querySelectorAll('.time-choice');
 let data = [];
 //On déclare un tableau data qui va permettre de récupérer toutes les données
 //Cette variable sera modifiée dans la fonction fetchData
-console.log(data); //retourne tableau vide
 const activitySpan = document.getElementsByClassName('activity');
 const previousSpan = document.getElementsByClassName('previous');
 const currentSpan = document.getElementsByClassName('current');
@@ -14,7 +13,6 @@ timeChoices.forEach(timeChoice =>{
     addClassActive(timeChoice);
     //on récupère le dataset pour envoyer la donnée dans la prochaine fonction
     const dataTime = timeChoice.dataset.time;
-    
     renderDataOnCards(dataTime);
   })
 })
@@ -35,13 +33,27 @@ async function renderDataOnCards(dataTime){
   // afin qu'il garde en mémoire la donnée du dataset
   //Puis on itère sur chaque entrée du tableau data
 
+  let previousText = '';
+  switch(dataTime){
+    case 'daily':
+      previousText = 'Yesterday';
+      break;
+    case 'weekly':
+      previousText = 'Last week';
+      break;
+    case 'monthly':
+      previousText = 'Last month'
+  };
+
   //Chaque entrée sera nommée activity,
   //et on récupère l'index pour itérer sur toutes les entrées nécessaires
   data.forEach((activity, index) =>{
     const currentData = activity.timeframes[dataTime].current;
     const previousData = activity.timeframes[dataTime].previous;
-    currentSpan[index].innerHTML = `${currentData} hrs`;
-    previousSpan[index].innerHTML = `${previousData} hrs`;
+    let currentHourSuffix = currentData <= 1 ? 'hr' : 'hrs';
+    let previousHourSuffix = previousData <= 1 ? 'hr' : 'hrs';
+    currentSpan[index].innerHTML = `${currentData} ${currentHourSuffix}`;
+    previousSpan[index].innerHTML = `${previousText} - ${previousData} ${previousHourSuffix}`;
     
   })
 }
@@ -51,9 +63,9 @@ async function renderDataOnCards(dataTime){
 async function fetchData(){
   const response = await fetch('data.json');
   data = await response.json();
-  console.log(data);//retourne tableau d'objets, 
-  //qui arrive après le log en fin de fichier car opération asynchrone
+  timeChoices[1].click();
+  //simule clic sur weekly (comme sur le design)
+  //pour que des données s'affichent dès le chargement
 }
 
 fetchData();
-console.log(data);//retourne tableau vide
