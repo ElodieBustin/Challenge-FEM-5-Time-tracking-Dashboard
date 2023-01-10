@@ -61,9 +61,6 @@
   background-color: #1c1f4a;
   margin-bottom: 1rem;
   border-radius: 10px;
-}
-
-.card:not(:first-child) {
   height: 150px;
 }
 
@@ -177,5 +174,9 @@ body {
 
 .active {
   color: white;
+}
+
+.height {
+  height: auto;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -6,6 +6,7 @@ let data = [];
 const activitySpan = document.getElementsByClassName('activity');
 const previousSpan = document.getElementsByClassName('previous');
 const currentSpan = document.getElementsByClassName('current');
+const containerActivity = document.getElementById('container-activities');
 
 
 timeChoices.forEach(timeChoice =>{
@@ -47,14 +48,32 @@ async function renderDataOnCards(dataTime){
 
   //Chaque entrée sera nommée activity,
   //et on récupère l'index pour itérer sur toutes les entrées nécessaires
-  data.forEach((activity, index) =>{
+  data.forEach((activity) =>{
+    const title = activity.title;
+    const titleClass = title.toLowerCase().replace(' ', '-');
     const currentData = activity.timeframes[dataTime].current;
     const previousData = activity.timeframes[dataTime].previous;
     let currentHourSuffix = currentData <= 1 ? 'hr' : 'hrs';
     let previousHourSuffix = previousData <= 1 ? 'hr' : 'hrs';
-    currentSpan[index].innerHTML = `${currentData} ${currentHourSuffix}`;
-    previousSpan[index].innerHTML = `${previousText} - ${previousData} ${previousHourSuffix}`;
+    const divNode = document.createElement('div');
+    divNode.classList.add('card', titleClass);
+
+    const renderCard = `
+    <div class="banner">
+      <!-- <img src="/images/icon-work.svg" alt=""> -->
+    </div>
+    <div class="tracker">
+      <span class="activity align-end">${title}</span>
+      <span class="ellipsis align-end justify-end">
+        <img src="/images/icon-ellipsis.svg" alt="">
+      </span>
+      <span class="current">${currentData} ${currentHourSuffix}</span>
+      <span class="previous justify-end">${previousText} - ${previousData} ${previousHourSuffix}</span> 
+    </div>
+    `
     
+    divNode.innerHTML = renderCard;
+    containerActivity.appendChild(divNode);
   })
 }
 

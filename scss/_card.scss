@@ -1,14 +1,11 @@
 .card {
-    &:not(:first-child){
-        height: 150px;
-    }
     background-color: $darkBlue;
     margin-bottom: 1rem;
     border-radius: 10px; 
+    height: 150px;
 
     .banner{
         height: 2.5rem;
-
     }
 
     .tracker{
