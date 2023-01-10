@@ -9,14 +9,16 @@ const currentSpan = document.getElementsByClassName('current');
 const containerActivity = document.getElementById('container-activities');
 
 
+
+
 timeChoices.forEach(timeChoice =>{
   timeChoice.addEventListener('click', ()=>{
     addClassActive(timeChoice);
     //on récupère le dataset pour envoyer la donnée dans la prochaine fonction
     const dataTime = timeChoice.dataset.time;
     renderDataOnCards(dataTime);
-  })
-})
+  });
+});
 
 function addClassActive(timeChoice){
   //Permet d'ajouter la class active à l'élément cliqué
@@ -26,6 +28,15 @@ function addClassActive(timeChoice){
   });
   timeChoice.classList.add('active');
 }
+
+
+function deleteActivityCard(){
+  const cardsActivity = [...document.getElementsByClassName('card-activity')];
+  //HTMLCollection est une sorte de pseudo array, certes itérable,
+  //mais pas lisible par des fonctions comme forEach
+  //Pour le rendre lisible, on utilise le spread operator
+  cardsActivity.forEach(activityCard => activityCard.remove());
+};
 
 //la fonction suivante doit être asynchrone pour laisser le temps
 //à js de récupérer les données
@@ -46,6 +57,11 @@ async function renderDataOnCards(dataTime){
       previousText = 'Last month'
   };
 
+  //Comme le clic génère les cartes, chaque fois que l'on change le dataset
+  //cela génère de nouvelles cartes
+  //il faut donc les supprimer 
+  deleteActivityCard();
+
   //Chaque entrée sera nommée activity,
   //et on récupère l'index pour itérer sur toutes les entrées nécessaires
   data.forEach((activity) =>{
@@ -56,7 +72,7 @@ async function renderDataOnCards(dataTime){
     let currentHourSuffix = currentData <= 1 ? 'hr' : 'hrs';
     let previousHourSuffix = previousData <= 1 ? 'hr' : 'hrs';
     const divNode = document.createElement('div');
-    divNode.classList.add('card', titleClass);
+    divNode.classList.add('card', 'card-activity', titleClass);
 
     const renderCard = `
     <div class="banner">
