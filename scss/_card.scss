@@ -6,6 +6,7 @@
 
     @include breakpoint-up(desktop){
         margin-bottom: 0;
+        height: auto;
     }
 
     .banner{

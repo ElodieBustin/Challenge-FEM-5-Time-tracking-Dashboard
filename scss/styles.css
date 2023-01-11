@@ -67,6 +67,7 @@
 @media (min-width: 700px) {
   .card {
     margin-bottom: 0;
+    height: auto;
   }
 }
 
@@ -161,10 +162,15 @@ body {
   font-family: 'Rubik', sans-serif;
   max-width: 375px;
   height: 100%;
-  margin: auto;
   padding: 1rem;
   color: white;
   background-color: #0f1424;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (min-width: 700px) {
@@ -174,7 +180,7 @@ body {
   }
 }
 
-.grid-section {
+.container-section {
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,8 +192,9 @@ body {
 }
 
 @media (min-width: 700px) {
-  .grid-section {
+  .container-section {
     width: 70%;
+    height: 50%;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 3fr;
@@ -204,7 +211,7 @@ body {
         grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 }
 
