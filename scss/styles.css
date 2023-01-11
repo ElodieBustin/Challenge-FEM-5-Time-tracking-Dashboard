@@ -64,6 +64,12 @@
   height: 150px;
 }
 
+@media (min-width: 700px) {
+  .card {
+    margin-bottom: 0;
+  }
+}
+
 .card .banner {
   height: 2.5rem;
 }
@@ -156,6 +162,20 @@ body {
   max-width: 375px;
   height: 100%;
   margin: auto;
+  padding: 1rem;
+  color: white;
+  background-color: #0f1424;
+}
+
+@media (min-width: 700px) {
+  body {
+    max-width: 1440px;
+    height: 100vh;
+  }
+}
+
+.grid-section {
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -163,9 +183,29 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 1rem;
-  color: white;
-  background-color: #0f1424;
+}
+
+@media (min-width: 700px) {
+  .grid-section {
+    width: 70%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 3fr;
+        grid-template-columns: 1fr 3fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .container-activities {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+  }
 }
 
 .hidden {

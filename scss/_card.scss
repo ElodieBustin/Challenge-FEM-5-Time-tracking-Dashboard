@@ -4,6 +4,10 @@
     border-radius: 10px; 
     height: 150px;
 
+    @include breakpoint-up(desktop){
+        margin-bottom: 0;
+    }
+
     .banner{
         height: 2.5rem;
     }

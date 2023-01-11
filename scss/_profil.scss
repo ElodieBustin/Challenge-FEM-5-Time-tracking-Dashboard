@@ -1,5 +1,6 @@
 .profil{
 
+
     &__header{
         background-color: $blue;
         border-radius: 10px;
@@ -46,4 +47,11 @@
             }
         }
     }
+
+    // @include breakpoint-up(desktop){
+    //     grid-column-start: 1;
+    //     grid-column-end: 2;
+    //     grid-row-start: 1;
+    //     grid-row-end: 3;
+    // }
 }
