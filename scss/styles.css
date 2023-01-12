@@ -11,11 +11,27 @@
   width: 80px;
 }
 
+@media (min-width: 700px) {
+  .profil__header .image-container {
+    min-width: 40%;
+  }
+}
+
 .profil__header .image-container img {
   width: 80%;
   height: auto;
   border-radius: 50%;
   border: 3px solid white;
+}
+
+@media (min-width: 700px) {
+  .profil__header {
+    height: 60%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: fit-content(100%) 1fr;
+        grid-template-rows: fit-content(100%) 1fr;
+  }
 }
 
 .profil__report {
@@ -42,6 +58,21 @@
   font-weight: 300;
 }
 
+@media (min-width: 700px) {
+  .profil__report > span {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .profil__report {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-left: 0;
+  }
+}
+
 .profil__time {
   margin: 1.5rem;
   display: -webkit-box;
@@ -50,11 +81,39 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   font-size: 0.9rem;
-  color: #bdc1ff;
+  color: #6f76c8;
 }
 
 .profil__time .time-choice:hover {
   cursor: pointer;
+}
+
+@media (min-width: 700px) {
+  .profil__time {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 1.5rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .profil {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .card {
@@ -177,6 +236,8 @@ body {
   body {
     max-width: 1440px;
     height: 100vh;
+    padding: 0;
+    margin: auto;
   }
 }
 
@@ -194,11 +255,11 @@ body {
 @media (min-width: 700px) {
   .container-section {
     width: 70%;
-    height: 50%;
+    height: 55%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 3fr;
-        grid-template-columns: 1fr 3fr;
+    -ms-grid-columns: minmax(auto, 230px) 3fr;
+        grid-template-columns: minmax(auto, 230px) 3fr;
     gap: 1.5rem;
   }
 }

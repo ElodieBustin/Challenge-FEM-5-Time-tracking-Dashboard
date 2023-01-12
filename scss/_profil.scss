@@ -1,19 +1,28 @@
 .profil{
 
-
     &__header{
         background-color: $blue;
         border-radius: 10px;
         display: flex;
         padding: 1.5rem;
+        
         .image-container{
             width: 80px;
+            @include breakpoint-up(desktop){
+                min-width: 40%;
+            }
             img{
                 width: 80%;
                 height: auto;
                 border-radius: 50%;
                 border: 3px solid white;
             }
+        }
+
+        @include breakpoint-up(desktop){
+            height: 60%;
+            display: grid;
+            grid-template-rows: fit-content(100%) 1fr;
         }
     }
 
@@ -31,6 +40,16 @@
             display: block;
             font-size: 1.5rem;
             font-weight: 300;
+
+            @include breakpoint-up(desktop){
+                font-size: 2rem;
+                line-height: 2.5rem;
+            }
+        }
+
+        @include breakpoint-up(desktop){
+            justify-self: start;
+            margin-left: 0;
         }
     }
 
@@ -39,19 +58,24 @@
         display: flex;
         justify-content: space-around;
         font-size: 0.9rem;
-        color: $paleBlue;
+        color: $desaturatedBlue;
 
         .time-choice{
             &:hover{
                 cursor: pointer;
             }
         }
+
+        @include breakpoint-up(desktop){
+            flex: 1;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 1.5rem;
+        }
     }
 
-    // @include breakpoint-up(desktop){
-    //     grid-column-start: 1;
-    //     grid-column-end: 2;
-    //     grid-row-start: 1;
-    //     grid-row-end: 3;
-    // }
+    @include breakpoint-up(desktop){
+        display: flex;
+        flex-direction: column;
+    }
 }
