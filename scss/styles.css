@@ -86,6 +86,7 @@
 
 .profil__time .time-choice:hover {
   cursor: pointer;
+  color: white;
 }
 
 @media (min-width: 700px) {
@@ -155,6 +156,11 @@
   }
 }
 
+.card .tracker:hover {
+  cursor: pointer;
+  background-color: #6f76c8;
+}
+
 .card .tracker .align-end {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
@@ -200,7 +206,7 @@
 
 .card .tracker .previous {
   font-size: 0.9rem;
-  color: #6f76c8;
+  color: #bdc1ff;
   padding-top: 0.5rem;
 }
 

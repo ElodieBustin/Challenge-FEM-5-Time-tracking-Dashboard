@@ -29,6 +29,11 @@
             grid-template-rows: 1fr fit-content(100%) 1fr;
         }
 
+        &:hover{
+            cursor: pointer;
+            background-color: $desaturatedBlue;
+        }
+
         .align-end{
             align-self: end;
 
@@ -61,7 +66,7 @@
 
         .previous{
             font-size: 0.9rem;
-            color: $desaturatedBlue;
+            color: $paleBlue;
             padding-top: 0.5rem;
 
             @include breakpoint-up(desktop){
