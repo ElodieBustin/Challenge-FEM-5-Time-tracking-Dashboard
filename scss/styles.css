@@ -148,10 +148,25 @@
   gap: 0.8rem 0;
 }
 
+@media (min-width: 700px) {
+  .card .tracker {
+    -ms-grid-rows: 1fr fit-content(100%) 1fr;
+        grid-template-rows: 1fr fit-content(100%) 1fr;
+  }
+}
+
 .card .tracker .align-end {
   -ms-flex-item-align: end;
       -ms-grid-row-align: end;
       align-self: end;
+}
+
+@media (min-width: 700px) {
+  .card .tracker .align-end {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 .card .tracker .justify-end {
@@ -163,15 +178,43 @@
   font-weight: 500;
 }
 
+@media (min-width: 700px) {
+  .card .tracker .activity {
+    font-size: 0.9rem;
+  }
+}
+
 .card .tracker .current {
   font-size: 1.8rem;
   font-weight: 300;
+}
+
+@media (min-width: 700px) {
+  .card .tracker .current {
+    font-size: 2.5rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+  }
 }
 
 .card .tracker .previous {
   font-size: 0.9rem;
   color: #6f76c8;
   padding-top: 0.5rem;
+}
+
+@media (min-width: 700px) {
+  .card .tracker .previous {
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    grid-row-end: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
 }
 
 .work {
